@@ -1,0 +1,45 @@
+{
+    "productos": [
+
+        {
+            "nombre": "REMERA NIKE",
+            "precio": "150",
+            "fuente": "./imagenes/remeraNike.jpg"
+            
+          },
+
+          {
+            "nombre": "SHORTS ADIDAS",
+            "precio": "90",
+            "fuente": "./imagenes/shortAdidas.jpg"
+          },
+
+          {
+            "nombre": "CAMPERA JORDAN",
+            "precio": "250",
+            "fuente": "./imagenes/camperaJordan.jpg"
+          },
+
+          {
+            "nombre": "ZAPATILLAS VANS OLD SKULL",
+            "precio": "180",
+            "fuente": "./imagenes/vans.jpg"
+          },
+
+          {
+            "nombre": "MEDIAS CONVERSE",
+            "precio": "50",
+            "fuente": "./imagenes/medias.jpg"
+          },
+          
+          {
+            "nombre": "ZAPATILLAS ADIDAS FORUM MID",
+            "precio": "230",
+            "fuente": "./imagenes/adidasForumMid.jpg"
+          }
+
+
+
+    ]
+
+}

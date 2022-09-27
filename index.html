@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <title>CARRITO DE COMPRAS</title>
+</head>
+<body style=" background-image: linear-gradient(rgb(237, 212, 212), rgb(234, 234, 188));;">
+   <header>
+            <!-- <button id="cart" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                <span class='fas fa-shopping-cart'>Carrito</span>
+            </button>
+
+            <button id="reg" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registro" >
+                <span>Registro</span> 
+            </button>    
+                
+            <button id="log" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logIn" >
+                <span>Login</span>
+            </button> -->
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+            <a id="bienvenidoID" class="navbar-brand" href="#">BIENVENIDO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button id="reg" type="button" class="btn btn-ligt" style="color:rgb(105, 33, 230)" data-bs-toggle="modal" data-bs-target="#registro" >
+                            <span>REGISTRO</span> 
+                        </button>  
+                    </li>
+                    <li class="nav-item">
+                        <button id="log" type="button" class="btn btn-light" style="color:rgb(103, 46, 201)" data-bs-toggle="modal" data-bs-target="#logIn" >
+                            <span>INICIAR SESION</span>
+                        </button>
+                    </li>
+
+                    <li class="nav-item" >
+                        <button id="cart" type="button" class="btn btn-light" style="color:rgb(89, 7, 165)" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                            <span class='fas fa-shopping-cart'>CARRITO</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        
+        
+        <!-- Modal de Registro-->
+        <div class="modal" id= registro tabindex="-1" role="dialog" aria-labelledby="user">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="user">Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-register" action="">        
+                        <input id="fullName" type="text" placeholder="Nombre" >
+                        <input id="userName" type="text" placeholder="Usuario" >
+                        <input id="correo"    type="text" placeholder="Email" >
+                        <input id="telefono" type="number" placeholder="Teléfono" >
+                        <input id="password" type="password" placeholder="Contraseña" >
+                        <input id="confirmPassword" type="password" placeholder="Confirme Contraseña" >
+                        <div class="buttons p-2">
+                        <input class="myButton btn btn-dark" type="submit" value="Registrarse">
+                    </form>      
+                </div>            
+            </div>  
+            </div>
+            </div>
+            </div>
+            
+            <!-- Modal LogIn-->
+            <div class="modal" id= logIn tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ingresoUser">INGRESAR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-Login" action="">        
+                        <input id="userNombre" type="text" placeholder="Usuario" >
+                        <input id="contraseña" type="password" placeholder="Contraseña" >        
+                        <div class="buttons p-2">
+                        <button id="ingreso" class="myButton btn btn-dark">Iniciar Sesion</button>
+                        <button id="cerrarSesion" class="myButton btn btn-secondary">Cerrar Sesion</button>
+                        <button id="eliminarUsuario" class="myButton btn btn-danger" >Eliminar Usuario</button>
+                        <!-- <button id="eliminarUsuario" class="myButton btn btn-warning" >Eliminar Usuario</button> -->
+                        </div>      
+                    </form>      
+                </div>            
+            </div>  
+            </div>
+            </div>
+            </div>
+
+        
+
+        <!-- Modal Carrito -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Eliminar</th>
+                                    <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="items"></tbody>
+                                <tfoot>
+                                    <tr id="footer">
+                                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                                    </tr>
+                                </tfoot>
+                                </table>
+                            <div class="row" id="cards"></div>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="detalleUCompra" type="button" class="btn btn-secondary">Ver Ultima Compra</button>
+                    <button  id = "Finish" type="button" class="btn btn-warning">Finalizar Compra</button>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Modal Detalle Ultima Compra -->
+         <div class="modal fade " id="exampleModalUC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black;">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content " style="background-color: rgb(213, 209, 237); border:rgb(0, 0, 0);">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DETALLES DE SU ULTIMA COMPRA:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <table class="table" style="border: rgb(0, 0, 0);">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio x Unidad</th>
+                                    
+                                    <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="itemsUc"></tbody>
+                                <tfoot>
+                                    <tr id="footerUc">
+                                    <th scope="row" colspan="5">Carrito vacío</th>
+                                    </tr>
+                                </tfoot>
+                                </table>
+                            <div class="row" id="cards"></div>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                    <!-- <button id="detalleUCompra" type="button" class="btn btn-info">Detalle Ultima Compra</button> -->
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                    <!-- <button  id = "Finish" type="button" class="btn btn-primary">Terminar compra</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+     <!--GALERIA DE PRODUCTOS -->
+     
+
+     <main  class="conteinerGaleria">
+
+            <div class="titleBar p-2 justify-content-center d-flex" style="background-color:rgb(237, 225, 225) ;">
+                <h2 class="titles" > PRODUCTOS DISPONIBLES</h2>
+            </div>
+            
+            <div class=" row-cols-md-3 ">
+                <!-- Button trigger modal
+                <button id="toggleMyModal" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                    <i class='fas fa-shopping-cart' style='font-size:36px'>Ver Carrito</i>
+                    </button> -->
+        
+        </div>
+
+            <section class="d-flex justify-content-center mt-5">
+                <article class="container">
+                    <div id="contenedor-productos" class="row justify-content-center row-cols-1 row-cols-md-3 g-4">
+                        <div class="card  m-3 p-3">
+                            
+                                <button class="btn btn-success">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+      
+
+    </main>
+
+   
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+          AOS.init();
+        </script>
+        <script src="datos.json"></script>
+        
+      <script src= "script.js"></script>
+</body>
+</html>
