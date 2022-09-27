@@ -90,7 +90,7 @@ function crearCard(producto) {
     carta.append(cuerpoCarta); // luego el cuerpo con el nombre,precio,descripcion
     //FUNCION ON.CLICK
     botonAgregar.onclick = () => {
-        //alert("Hiciste click en el producto" + producto.nombre);
+       
 
         let itemaComprar= new itemsDelCarrito(producto, 1);
         miCarrito.push(itemaComprar);
@@ -224,8 +224,7 @@ botonVaciarCompra.addEventListener("click", (i) => {
 )
 
 //ELIMINAR PRODUCTO DEL CARRITO 
-// const getLocalCarrito = localStorage.getItem("miCarrito");
-// const validateCarrito = JSON.parse(getLocalCarrito); 
+
 
 function eliminar(nombre) {
 
@@ -397,7 +396,7 @@ function RegisterUser(event) {
       button: false,
       })
 
-    // usted esta logueado como userName.value
+   
     
     
    
@@ -493,7 +492,7 @@ function LoginUser(event) {
       bienvenido.innerHTML ="BIENVENIDO "+ (userNombre.value).toUpperCase();
       ingresar.innerHTML="LOGUEADO COMO: "+(userNombre.value).toUpperCase();
 
-      // un emoji o un cambio de algo en algun lado // listo
+      
     
   }    
   
